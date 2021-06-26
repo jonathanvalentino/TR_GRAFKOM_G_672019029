@@ -68,7 +68,7 @@ void tampil(void)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glPushMatrix();
-    gluLookAt(0.0f, 0.0f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+    gluLookAt(0.0f, 0.0f, 90.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
     glRotatef(xrot, 1.0f,0.0f, 0.0f);
     glRotatef(yrot, 0.0f, 1.0f, 0.0f);
 
@@ -77,8 +77,8 @@ void tampil(void)
     glColor3f(0.741, 0.741, 0.741);
     glVertex3f(-100.0, -20.0, 100.0);
     glVertex3f(100.0, -20.0, 100.0);
-    glVertex3f(100.0, -20.0, -100.0);
-    glVertex3f(-100.0, -20.0, -100.0);
+    glVertex3f(100.0, -20.0, -150.0);
+    glVertex3f(-100.0, -20.0, -150.0);
     glEnd();
 
     glPopMatrix();
