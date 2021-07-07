@@ -15,6 +15,7 @@
 
 void initial();
 void display();
+void matahari();
 void halaman();
 void gedung_kanan();
 void gedung_tengah_kanan();
@@ -62,25 +63,18 @@ void initial(){
 	glLineWidth(4.0);
 }
 
-void lingkaran (float TITIK_LAYAR_X,float TITIK_LAYAR_Y,
-               float LEBAR_X, float LEBAR_Y, float JUMLAH_SUDUT, float ROTASI)
-{
-    GLfloat derajat =360.0f /JUMLAH_SUDUT *M_PI /100.0f;
-    glBegin(GL_TRIANGLE_FAN);
-        GLfloat sudut = 0.0f - ROTASI;
-        for (int k=0; k< JUMLAH_SUDUT;++k)
-        {
-            glVertex2f(TITIK_LAYAR_X + (LEBAR_X* cos(sudut)), TITIK_LAYAR_Y+ (LEBAR_Y *sin(sudut)));
-            sudut += derajat;
-        }
-    glEnd();
-}
 
+void matahari() {
+	glPushMatrix();
+	glColor3f(0.988, 0.854, 0.172);
+	glTranslatef(-250, 240, 50);
+	glutWireSphere(20,200,200);
+	glPopMatrix();
+}
 
 void halaman(){
 
-	glColor3f(255/255.f,215/255.f,0/255.f);
-    lingkaran(-500, 300, 40, 40, 500, 20);
+	
 
 	glBegin(GL_QUADS);
 	glColor3f(0.462, 0.458, 0.454);
@@ -981,6 +975,7 @@ void display(){
 	gluLookAt(0.0f, 0.0f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+	matahari();
 	halaman();
 	gedung_kanan();
 	gedung_tengah_kanan();
