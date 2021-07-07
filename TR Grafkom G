@@ -71,7 +71,7 @@ void objek_tambahan() {
 	glutWireSphere(20,200,200);
 	glPopMatrix();
 	
-		glBegin(GL_QUADS);//meja tengah
+	glBegin(GL_QUADS);//meja tengah
 		glColor3f(0.886, 0.376, 0.031);
 		glVertex3f(0.0, -140.0, -240);//tengah depan
 		glVertex3f(-35.0, -140.0, -240);
@@ -226,53 +226,6 @@ void objek_tambahan() {
 }
 
 void halaman(){
-
-	glBegin(GL_QUADS);
-	glColor3f(0.462, 0.458, 0.454);
-	glVertex3f(-330.0, -141.0, -350);
-	glVertex3f(-330.0, -141.0, 180.0);
-	glVertex3f(300.0, -141.0, 180.0);
-	glVertex3f(300.0, -141.0, -350.0);
-
-	glColor3f(0, 0, 0);
-	//jalan 1
-	glVertex3f(-330.0, -140.0, -60);
-	glVertex3f(-330.0, -140.0, -100.0);
-	glVertex3f(-180.0, -140.0, 180.0);
-	glVertex3f(-200.0, -140.0, 180.0);
-
-	glVertex3f(-160.0, -140.0, 35);
-	glVertex3f(-160.0, -140.0, 0.0);
-	glVertex3f(-240.0, -140.0, 80.0);
-	glVertex3f(-230.0, -140.0, 100.0);
-
-	glVertex3f(-160.0, -140.0, 35);
-	glVertex3f(-160.0, -140.0, 0.0);
-	glVertex3f(300.0, -140.0, 0.0);
-	glVertex3f(300.0, -140.0, 35.0);
-
-	//jalan 2
-	glVertex3f(-330.0, -140.0, 10);
-	glVertex3f(-330.0, -140.0, -40.0);
-	glVertex3f(-210.0, -140.0, 180.0);
-	glVertex3f(-230.0, -140.0, 180.0);
-
-	glVertex3f(-160.0, -140.0, 85);
-	glVertex3f(-160.0, -140.0, 60.0);
-	glVertex3f(-220.0, -140.0, 110.0);
-	glVertex3f(-210.0, -140.0, 130.0);
-
-	glVertex3f(-160.0, -140.0, 85);
-	glVertex3f(-160.0, -140.0, 60.0);
-	glVertex3f(300.0, -140.0, 60.0);
-	glVertex3f(300.0, -140.0, 85.0);
-	glEnd();
-
-}
-
-void halaman(){
-
-	
 
 	glBegin(GL_QUADS);
 	glColor3f(0.462, 0.458, 0.454);
