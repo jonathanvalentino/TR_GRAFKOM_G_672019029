@@ -222,7 +222,51 @@ void objek_tambahan() {
 	glEnd();
 	
 	
+	glBegin(GL_QUADS);//loker
+		glColor3f(0.713, 0.329, 0.027);
+		glVertex3f(15.0, -140.0, -275);
+		glVertex3f(-50.0, -140.0, -275);
+		glColor3f(0.694, 0.321, 0.023);
+		glVertex3f(-50.0, -100, -275);
+		glVertex3f(15.0, -100, -275);
+		
+		glVertex3f(15.0, -100.0, -290);
+		glVertex3f(-50.0, -100.0, -290);
+		glVertex3f(-50.0, -100, -275);
+		glVertex3f(15.0, -100, -275);
+		
+		glVertex3f(15.0, -140.0, -275);
+		glVertex3f(15.0, -140.0, -290);
+		glVertex3f(15.0, -100, -290);
+		glVertex3f(15.0, -100, -275);
+		
+		glVertex3f(-50.0, -140.0, -275);
+		glVertex3f(-50.0, -140.0, -290);
+		glVertex3f(-50.0, -100, -290);
+		glVertex3f(-50.0, -100, -275);
+		
+	glEnd();
 	
+	glBegin(GL_LINES);
+	glColor3f(0,0,0);
+		glVertex3f(-37.0, -140.0, -275);
+		glVertex3f(-37.0, -100, -275);
+		
+		glVertex3f(-24.0, -140.0, -275);
+		glVertex3f(-24.0, -100, -275);
+		
+		glVertex3f(-11.0, -140.0, -275);
+		glVertex3f(-11.0, -100, -275);
+		
+		glVertex3f(2.0, -140.0, -275);
+		glVertex3f(2.0, -100, -275);
+		
+		glVertex3f(15.0, -110.0, -275);
+		glVertex3f(-50.0, -110.0, -275);
+		
+		glVertex3f(15.0, -130.0, -275);
+		glVertex3f(-50.0, -130.0, -275);
+	glEnd();
 }
 
 void halaman(){
