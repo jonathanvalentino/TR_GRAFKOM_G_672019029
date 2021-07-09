@@ -33,6 +33,20 @@ float ydiff = 0.0f;
 bool mouseDown = false;
 int is_depth;
 
+void lingkaran (float TITIK_LAYAR_X,float TITIK_LAYAR_Y,
+               float LEBAR_X, float LEBAR_Y, float JUMLAH_SUDUT, float ROTASI)
+{
+    GLfloat derajat =360.0f /JUMLAH_SUDUT *M_PI /100.0f;
+    glBegin(GL_TRIANGLE_FAN);
+        GLfloat sudut = 0.0f - ROTASI;
+        for (int k=0; k< JUMLAH_SUDUT;++k)
+        {
+            glVertex2f(TITIK_LAYAR_X + (LEBAR_X* cos(sudut)), TITIK_LAYAR_Y+ (LEBAR_Y *sin(sudut)));
+            sudut += derajat;
+        }
+    glEnd();
+}
+
 int main(int argc, char **argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -68,7 +82,7 @@ void objek_tambahan() {
 	glPushMatrix();
 	glColor3f(0.988, 0.854, 0.172);
 	glTranslatef(-250, 240, 50);
-	glutWireSphere(20,200,200);
+	lingkaran(-500, 300, 40, 40, 500, 20);
 	glPopMatrix();
 	
 	glBegin(GL_QUADS);//meja tengah
