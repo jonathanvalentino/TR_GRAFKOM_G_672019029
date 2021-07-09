@@ -33,20 +33,6 @@ float ydiff = 0.0f;
 bool mouseDown = false;
 int is_depth;
 
-void lingkaran (float TITIK_LAYAR_X,float TITIK_LAYAR_Y,
-               float LEBAR_X, float LEBAR_Y, float JUMLAH_SUDUT, float ROTASI)
-{
-    GLfloat derajat =360.0f /JUMLAH_SUDUT *M_PI /100.0f;
-    glBegin(GL_TRIANGLE_FAN);
-        GLfloat sudut = 0.0f - ROTASI;
-        for (int k=0; k< JUMLAH_SUDUT;++k)
-        {
-            glVertex2f(TITIK_LAYAR_X + (LEBAR_X* cos(sudut)), TITIK_LAYAR_Y+ (LEBAR_Y *sin(sudut)));
-            sudut += derajat;
-        }
-    glEnd();
-}
-
 int main(int argc, char **argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -77,12 +63,24 @@ void initial(){
 	glLineWidth(4.0);
 }
 
+void lingkaran (float TITIK_LAYAR_X,float TITIK_LAYAR_Y,
+               float LEBAR_X, float LEBAR_Y, float JUMLAH_SUDUT, float ROTASI)
+{
+    GLfloat derajat =360.0f /JUMLAH_SUDUT *M_PI /100.0f;
+    glBegin(GL_TRIANGLE_FAN);
+        GLfloat sudut = 0.0f - ROTASI;
+        for (int k=0; k< JUMLAH_SUDUT;++k)
+        {
+            glVertex2f(TITIK_LAYAR_X + (LEBAR_X* cos(sudut)), TITIK_LAYAR_Y+ (LEBAR_Y *sin(sudut)));
+            sudut += derajat;
+        }
+    glEnd();
+}
 
 void objek_tambahan() {
 	glPushMatrix();
 	glColor3f(0.988, 0.854, 0.172);
 	glTranslatef(-250, 240, 50);
-	lingkaran(-500, 300, 40, 40, 500, 20);
 	glPopMatrix();
 	
 	glBegin(GL_QUADS);//meja tengah
@@ -634,7 +632,8 @@ void objek_tambahan() {
 }
 
 void halaman(){
-	
+	glColor3f(1.0,1.0,0);
+    lingkaran(-300, 200, 30, 30, 500, 20);
 	glBegin(GL_POLYGON);//taman
 		glColor3f(0.215, 0.905, 0.015);
 		glVertex3f(-170.0, -140.0, 180);
@@ -1729,8 +1728,6 @@ void mouse(int button, int state, int x, int y){
 	else
 	mouseDown = false;
 }
-
-
 
 void mouseMotion(int x, int y){
 	if(mouseDown){
